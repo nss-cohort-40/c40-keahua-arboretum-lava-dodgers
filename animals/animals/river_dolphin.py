@@ -11,4 +11,4 @@ class RiverDolphin(Animal, Freshwater, Identifiable):
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
 
     def __str__(self):
-        return f'Dolphin {self.id}. Eeee EeeEEeeeeEE!'
+        return f'{self.species} {self.id}. Eeee EeeEEeeeeEE!'
