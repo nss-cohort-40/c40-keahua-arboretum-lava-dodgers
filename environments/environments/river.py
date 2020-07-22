@@ -1,8 +1,13 @@
-from animals import Aquatic
-from animals import Identifiable
-from environments import ContainsAnimals
-from environments import ContainsPlants
-from animals import RiverDolphin
+# from animals import Aquatic
+# from animals import Identifiable
+# from environments import ContainsAnimals
+# from environments import ContainsPlants
+# from animals import RiverDolphin
+from ...environments import Environment
+from ...identifiable import Identifiable
+from ...animals import RiverDolphin
+from ...animals import Aquatic
+
 
 
 class River(ContainsAnimals, ContainsPlants, Identifiable):
