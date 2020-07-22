@@ -1,8 +1,8 @@
 from animals import Animal
-from animals import Freshwater
-from animals import Identifiable
+from ..movements import Swimming
+from ..habitats import Freshwater
 
-class RiverDolphin(Animal, Freshwater, Identifiable):
+class RiverDolphin(Animal, Swimming, Freshwater):
 
     def __init__(self):
         Animal.__init__(self, "River dolphin")

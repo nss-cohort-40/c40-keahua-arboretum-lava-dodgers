@@ -1,7 +1,8 @@
 from animals import Animal
-from animals import Identifiable
+from ..movements import Walking
+from ..habitats import Terrestrial
 
-class GoldDustDayGecko(Animal, Identifiable):
+class GoldDustDayGecko(Animal, Walking, Terrestrial):
 
     def __init__(self):
         Animal.__init__(self, "Gold Dust Day Gecko")

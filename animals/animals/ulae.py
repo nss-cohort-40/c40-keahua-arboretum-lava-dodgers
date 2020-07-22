@@ -1,7 +1,8 @@
 from animals import Animal
-from animals import Identifiable
+from ..movements import Swimming
+from ..habitats import Saltwater
 
-class Ulae(Animal, Identifiable):
+class Ulae(Animal, Swimming, Saltwater):
 
     def __init__(self):
         Animal.__init__(self, "'Ulae")

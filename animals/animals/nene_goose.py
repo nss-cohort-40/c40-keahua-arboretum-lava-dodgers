@@ -1,8 +1,10 @@
 from animals import Animal
-from animals import Freshwater
-from animals import Identifiable
+from ..movements import Walking
+from ..movements import Swimming
+from ..movements import Flying
+from ..habitats import Terrestrial
 
-class NeneGoose(Animal, Identifiable):
+class NeneGoose(Animal, Walking, Swimming, Flying, Terrestrial):
 
     def __init__(self):
         Animal.__init__(self, "Nene Goose")

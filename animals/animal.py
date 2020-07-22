@@ -1,4 +1,6 @@
-class Animal:
+from ..identifiable import Identifiable
+
+class Animal(Identifible):
 
     def __init__(self, species):
         self.species = species

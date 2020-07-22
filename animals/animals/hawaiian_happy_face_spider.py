@@ -1,7 +1,8 @@
 from animals import Animal
-from animals import Identifiable
+from ..movements import Walking
+from ..habitats import Terrestrial
 
-class HawaiianHappyFaceSpider(Animal, Identifiable):
+class HawaiianHappyFaceSpider(Animal, Walking, Terrestrial):
 
     def __init__(self):
         Animal.__init__(self, "Hawaiian Happy-Face Spider")
