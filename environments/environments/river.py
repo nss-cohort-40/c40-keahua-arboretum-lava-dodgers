@@ -8,9 +8,9 @@ from animals import RiverDolphin
 class River(ContainsAnimals, ContainsPlants, Identifiable):
 
     def __init__(self):
-      ContainsAnimals.__init__(self)
-      ContainsPlants.__init__(self)
-      Identifiable.__init__(self)
+        ContainsAnimals.__init__(self)
+        ContainsPlants.__init__(self)
+        Identifiable.__init__(self)
 
     def add_animal(self, animal):
         try:
