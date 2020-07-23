@@ -11,6 +11,7 @@ class NeneGoose(Animal, Walking, Swimming, Flying, Terrestrial):
         Freshwater.__init__(self)
         Identifiable.__init__(self)
         self.__prey = { "Plant" }
+        self.minimum_age = 7
 
     def __str__(self):
         return f'{self.species} {self.id}. Honk honk!'

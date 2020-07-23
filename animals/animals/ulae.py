@@ -8,6 +8,7 @@ class Ulae(Animal, Swimming, Saltwater):
         Animal.__init__(self, "'Ulae")
         Identifiable.__init__(self)
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        self.minimum_age = 1
 
     def __str__(self):
         return f'{self.species} {self.id}. Blurbleblurble!!'
