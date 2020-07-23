@@ -1,9 +1,9 @@
-class Mountain(Environment):
+from ..environment import Environment
 
-    def __init__(self):
-      ContainsAnimals.__init__(self)
-      ContainsPlants.__init__(self)
-      Identifiable.__init__(self)
+class River(Environment):
+
+    def __init__(self, name):
+        super().__init__(name)
 
     def add_animal(self, animal):
         try:
