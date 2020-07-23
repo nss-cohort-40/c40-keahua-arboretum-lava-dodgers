@@ -1,5 +1,5 @@
 from .gold_dust_day_gecko import GoldDustDayGecko
-from .hawaiian_happy_face_spider import HawaiianHappyFaceSpider
+from .happy_face_spider import HappyFaceSpider
 from .kikakapu import Kikakapu
 from .nene_goose import NeneGoose
 from .opeapea import Opeapea

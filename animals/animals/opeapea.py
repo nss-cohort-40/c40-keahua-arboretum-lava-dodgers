@@ -1,4 +1,4 @@
-from animals import Animal
+from .animal import Animal
 from ..movements import Flying
 from ..habitats import Terrestrial
 

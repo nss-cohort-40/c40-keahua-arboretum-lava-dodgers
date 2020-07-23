@@ -1,8 +1,9 @@
 import sys
 import os
 
-from .misc import *
-from .places import *
+from misc import *
+from animals import *
+from places import *
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 

@@ -1,4 +1,4 @@
-from ..misc import Identifiable
+from misc import Identifiable
 
 class Environment(Identifiable):
     def __init__(self, name):

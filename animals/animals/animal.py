@@ -1,6 +1,6 @@
-from ..identifiable import Identifiable
+from misc import Identifiable
 
-class Animal(Identifible):
+class Animal(Identifiable):
 
     def __init__(self, species):
         self.species = species
