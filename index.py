@@ -1,8 +1,8 @@
+import sys
 import os
-from arboretum import Arboretum
-from actions import annex_habitat
-from actions import release_animal
-from actions import build_facility_report
+
+from .misc import *
+from .places import *
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 
