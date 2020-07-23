@@ -1,4 +1,4 @@
-from plants import Plant
+from .plant import Plant
 
 
 class Silversword(Plant):

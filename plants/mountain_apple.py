@@ -1,4 +1,4 @@
-from plants import Plant
+from .plant import Plant
 
 
 class Mountain_Apple(Plant):
