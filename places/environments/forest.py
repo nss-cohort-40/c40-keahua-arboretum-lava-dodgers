@@ -10,11 +10,14 @@ class Forest(Environment):
             if animal.terrestrial:
                 self.animals.append(animal)
         except AttributeError:
-            raise AttributeError("Cannot add non-terrestrial animal to forest, obviously.")
+            print("Cannot add non-terrestrial animal to forest, obviously.")
+            raise
+
 
     def add_plant(self, plant):
         try:
             if not plant.freshwater and not plant.saltwater:
                 self.plants.append(plant)
         except AttributeError:
-            raise AttributeError("Cannot add plants that require water to forests, silly.")
+            print("Cannot add plants that require water to forests, silly.")
+            raise
