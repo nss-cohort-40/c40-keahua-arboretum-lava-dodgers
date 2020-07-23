@@ -7,7 +7,6 @@ class Pueo(Animal, Walking, Flying, Terrestrial):
 
     def __init__(self):
         Animal.__init__(self, "Pueo")
-        Identifiable.__init__(self)
         self.__prey = { "Mouse", "Rat" }
         self.minimum_age = 8
 

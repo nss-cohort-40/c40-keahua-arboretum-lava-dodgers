@@ -6,8 +6,6 @@ class RiverDolphin(Animal, Swimming, Freshwater):
 
     def __init__(self):
         Animal.__init__(self, "River dolphin")
-        Freshwater.__init__(self)
-        Identifiable.__init__(self)
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
         self.minimum_age = 13
 
