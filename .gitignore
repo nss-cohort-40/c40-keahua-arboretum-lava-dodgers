@@ -7,4 +7,6 @@ obj
 *.sqlite3
 .vscode
 dist
+
+test.py
 TODO
