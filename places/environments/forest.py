@@ -20,7 +20,7 @@ class Forest(Environment):
 
     def add_plant(self, plant):
         try:
-            if plant.sunlight == "Shade" and plant.req_rainfall:
+            if plant.sunlight == "Shade" and plant.req_rainfall == True:
                 try:
                     if len(self.plants) < 32:
                         self.plants.append(plant)
