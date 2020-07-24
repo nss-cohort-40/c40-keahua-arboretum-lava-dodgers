@@ -26,8 +26,9 @@ def cultivate_plant(arboretum):
                 print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]}")
         
         biome_choice = int(input("Choose a biome > ")) - 1
-        biomes_available[biome_choice].add_plant(plant)
-        print(biomes_available[biome_choice.plants])
+        biomes_available[biome_choice].add_plant(new_plant)
+        print(biomes_available[biome_choice].plants)
+        
     else: 
         print("Fuck off")
         input("Press enter to fuck off... ")
