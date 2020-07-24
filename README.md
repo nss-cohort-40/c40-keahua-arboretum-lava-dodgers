@@ -9,8 +9,8 @@
 
 
 # Brought to you by Lava Dodgers LLC
-* ## Zach Nicholson
-* ### Elijah Lavoie
-* ### Kaleb Moran
-* ### John Bain
+* # Zach Nicholson
+* ## Elijah Lavoie
+* ## Kaleb Moran
+* ## John Bain
 * ###### Chris Cotton
