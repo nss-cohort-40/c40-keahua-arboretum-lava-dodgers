@@ -1,6 +1,9 @@
+import os
 from animals import *
 
 def choose_biome(animal, arboretum):
+    os.system('cls' if os.name == 'nt' else 'clear')
+    
     biomes = []
 
     biomes.extend(arboretum.rivers)
@@ -24,6 +27,7 @@ def choose_biome(animal, arboretum):
         choose_biome(animal, arboretum)
 
 def release_animal(arboretum):
+    os.system('cls' if os.name == 'nt' else 'clear')
 
     animal = None
 
