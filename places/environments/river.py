@@ -8,15 +8,29 @@ class River(Environment):
     def add_animal(self, animal):
         try:
             if animal.aquatic and animal.cell_type == "hypertonic":
-                self.animals.append(animal)
+                try:
+                    if len(self.animals) < 12:
+                        self.animals.append(animal)
+                except ValueError:
+                    print("****   That biome is not large enough   ****")
+                    print("****     Please choose another one      ****")
+                    raise
         except AttributeError:
-            print("Cannot add non-aquatic, or saltwater animals to a river")
+            print("****  Only freshwater aquatic animals allowed  ****")
+            print("****        Please choose another biome        ****")
             raise
 
     def add_plant(self, plant):
         try:
-            if plant.freshwater and plant.requires_current:
-                self.plants.append(plant)
+            if plant.req_current and plant.req_freshwater:
+                try:
+                    if len(self.plants) < 6:
+                        self.plants.append(plant)
+                except ValueError:
+                    print("****   That biome is not large enough   ****")
+                    print("****     Please choose another one      ****")
+                    raise
         except AttributeError:
-            print("Cannot add plants that require brackish water or stagnant water to a river biome")
+            print("****   Only moving freshwater plants allowed   ****")
+            print("****        Please choose another biome        ****")
             raise

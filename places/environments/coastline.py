@@ -7,19 +7,30 @@ class Coastline(Environment):
 
     def add_animal(self, animal):
         try:
-            if animal.terrestrial or animal.flying and not animal.aquatic:
-                self.animals.append(animal)
+            if animal.aquatic and animal.cell_type is "hypotonic":
+                try:
+                    if len(self.animals) < 15:
+                        self.animals.append(animal)
+                except ValueError:
+                    print("****   That biome is not large enough   ****")
+                    print("****     Please choose another one      ****")
+                    raise
         except AttributeError:
-            print("Cannot add aquatic animals to coastline. Put them in the water!")
+            print("****   Only saltwater animals allowed   ****")
+            print("****    Please choose another biome     ****")
             raise
 
     def add_plant(self, plant):
         try:
-            if not plant.freshwater and not plant.saltwater:
-                if len(self.plants) < 3:
-                    self.plants.append(plant)
-                else:
+            if plant.req_saltwater:
+                try:
+                    if len(self.plants) < 3:
+                        self.plants.append(plant)
+                except ValueError:
+                    print("****   That biome is not large enough   ****")
+                    print("****     Please choose another one      ****")
                     raise
         except AttributeError:
-            print("Cannot add plants that live in the water to coastlines. Put them in the water instead!")
+            print("****   Only saltwater plants allowed    ****")
+            print("****    Please choose another biome     ****")
             raise

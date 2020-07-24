@@ -8,15 +8,29 @@ class Mountain(Environment):
     def add_animal(self, animal):
         try:
             if animal.terrestrial:
-                self.animals.append(animal)
+                try:
+                    if len(self.animals) < 6:
+                        self.animals.append(animal)
+                except ValueError:
+                    print("****   That biome is not large enough   ****")
+                    print("****     Please choose another one      ****")
+                    raise
         except AttributeError:
-            print("Cannot add non-terrestrial animal to mountain, obviously.")
+            print("****  Only terrestrial animals allowed  ****")
+            print("****    Please choose another biome     ****")
             raise
 
     def add_plant(self, plant):
         try:
-            if not plant.requires_current or not plant.saltwater:
-                self.plants.append(plant)
+            if plant.req_elevation:
+                try:
+                    if len(self.plants) < 4:
+                        self.plants.append(plant)
+                except ValueError:
+                    print("****   That biome is not large enough   ****")
+                    print("****     Please choose another one      ****")
+                    raise
         except AttributeError:
-            print("Cannot add plants that require water to mountains, silly.")
+            print("****     Aquatic plants disallowed      ****")
+            print("****    Please choose another biome     ****")
             raise

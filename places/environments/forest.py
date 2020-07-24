@@ -8,16 +8,29 @@ class Forest(Environment):
     def add_animal(self, animal):
         try:
             if animal.terrestrial:
-                self.animals.append(animal)
+                try:
+                    if len(self.animals) < 20:
+                        self.animals.append(animal)
+                except ValueError:
+                    print("****   That biome is not large enough   ****")
+                    print("****     Please choose another one      ****")
+                    raise
         except AttributeError:
-            print("Cannot add non-terrestrial animal to forest, obviously.")
+            print("****  Only terrestrial animals allowed  ****")
+            print("****    Please choose another biome     ****")
             raise
-
 
     def add_plant(self, plant):
         try:
-            if not plant.freshwater and not plant.saltwater:
-                self.plants.append(plant)
+            if plant.sunlight is "Shade" and plant.req_rainfall:
+                try:
+                    if len(self.plants) < 32:
+                        self.plants.append(plant)
+                except ValueError:
+                    print("****   That biome is not large enough   ****")
+                    print("****     Please choose another one      ****")
+                    raise
         except AttributeError:
-            print("Cannot add plants that require water to forests, silly.")
+            print("****  Shaded plants requiring rainfall  ****")
+            print("****    Please choose another biome     ****")
             raise
