@@ -22,18 +22,26 @@ def feed_animal(arboretum):
             n+=1
 
     if choice == "1":
-        list_food(GoldDustDayGecko)
+        animal = GoldDustDayGecko()
+        list_food(animal)
     if choice == "2":
-        list_food(RiverDolphin)
+        animal = RiverDolphin()
+        list_food(animal)
     if choice == "3":
-        list_food(NeneGoose)
+        animal = NeneGoose()
+        list_food(animal)
     if choice == "4":
-        list_food(Kikakapu)
+        animal = Kikakapu()
+        list_food(animal)
     if choice == "5":
-        list_food(Pueo)
+        animal = Pueo()
+        list_food(animal)
     if choice == "6":
-        list_food(Ulae)
+        animal = Ulae()
+        list_food(animal)
     if choice == "7":
-        list_food(Opeapea)
+        animal = Opeapea()
+        list_food(animal)
     if choice == "8":
-        list_food(HappyFaceSpider)
+        animal = HappyFaceSpider()
+        list_food(animal)
