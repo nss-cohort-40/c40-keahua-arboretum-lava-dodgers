@@ -143,7 +143,7 @@ def cultivate_plant(arboretum):
             choose_plant()
             
         biomes_available[biome_choice].add_plant(new_plant)
-        # os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(f"The {plant} has successfully been cultivated!")
         input("Press enter to continue >>")
         
