@@ -8,8 +8,8 @@
 1. Run the command `python index.py` to start your application 
 
 
-Brought to you by Lava Dodgers LLC
-* # Zach Nicholson
+# Brought to you by Lava Dodgers LLC
+* ### Zach Nicholson
 * Elijah Lavoie
 * Kaleb Moran
 * John Bain
