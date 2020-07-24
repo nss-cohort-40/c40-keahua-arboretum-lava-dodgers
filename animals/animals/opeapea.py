@@ -6,7 +6,8 @@ class Opeapea(Animal, Flying, Terrestrial):
 
     def __init__(self):
         Animal.__init__(self, "Ope'ape'a")
-        Identifiable.__init__(self)
+        Flying.__init__(self)
+        Terrestrial.__init__(self)
         self.__prey = { "Moth", "Beetle", "Termite" }
         self.minimum_age = 5
 
