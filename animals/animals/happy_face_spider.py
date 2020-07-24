@@ -6,7 +6,8 @@ class HappyFaceSpider(Animal, Walking, Terrestrial):
 
     def __init__(self):
         Animal.__init__(self, "Happy-Face Spider")
-        Identifiable.__init__(self)
+        Walking.__init__(self)
+        Terrestrial.__init__(self)
         self.__prey = { "Fly", "Mosquito", "Ant", "Beetle", "Termite" }
         self.minimum_age = 0.5
 

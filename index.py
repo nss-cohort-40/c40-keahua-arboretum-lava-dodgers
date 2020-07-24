@@ -5,8 +5,6 @@ from misc import *
 from animals import *
 from places import *
 from actions import *
-from actions import annex_habitat
-from actions import feed_animal
 from plants import *
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")

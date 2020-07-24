@@ -8,8 +8,10 @@ class NeneGoose(Animal, Walking, Swimming, Flying, Terrestrial):
 
     def __init__(self):
         Animal.__init__(self, "Nene Goose")
-        Freshwater.__init__(self)
-        Identifiable.__init__(self)
+        Walking.__init__(self)
+        Swimming.__init__(self)
+        Flying.__init__(self)
+        Terrestrial.__init__(self)
         self.__prey = { "Plant" }
         self.minimum_age = 7
 
