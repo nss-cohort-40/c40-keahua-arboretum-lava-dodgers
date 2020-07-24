@@ -116,7 +116,7 @@ def cultivate_plant(arboretum):
         
     #Cultivate Blue Jade Vine
     if plant == "Blue Jade Vine":
-        new_plant = Rainbow_Eucalyptus()
+        new_plant = Blue_Jade()
         biomes_available = []
 
         for biome in arboretum.grasslands:
@@ -143,7 +143,7 @@ def cultivate_plant(arboretum):
             choose_plant()
             
         biomes_available[biome_choice].add_plant(new_plant)
-        os.system('cls' if os.name == 'nt' else 'clear')
+        # os.system('cls' if os.name == 'nt' else 'clear')
         print(f"The {plant} has successfully been cultivated!")
         input("Press enter to continue >>")
         
