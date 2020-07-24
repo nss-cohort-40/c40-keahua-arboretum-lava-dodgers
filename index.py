@@ -4,11 +4,9 @@ import os
 from misc import *
 from animals import *
 from places import *
-<<<<<<< HEAD
 from actions import annex_habitat
-=======
+from actions import build_facility_report
 from plants import *
->>>>>>> master
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 
