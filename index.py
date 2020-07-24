@@ -4,6 +4,7 @@ import os
 from misc import *
 from animals import *
 from places import *
+from actions import annex_habitat, release_animal
 from actions import annex_habitat
 from actions import build_facility_report
 from actions import feed_animal
