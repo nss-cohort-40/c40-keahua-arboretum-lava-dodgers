@@ -13,4 +13,4 @@
 * #### Elijah Lavoie
 * #### Kaleb Moran
 * #### John Bain
-* ######Chris Cotton
+* ###### Chris Cotton
