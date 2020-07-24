@@ -35,27 +35,21 @@ def release_animal(arboretum):
     if choice == "8":
         animal = HappyFaceSpider()
 
-    for index, river in enumerate(arboretum.rivers):
-        print(f'{index + 1}. River {str(river.id)[:8]} {len(river.animals)} animals')
+    biomes = []
 
-    for index, swamp in enumerate(arboretum.swamps):
-        print(f'{index + 2}. Swamp {str(swamp.id)[:8]} {len(swamp.animals)} animals')
+    biomes.extend(arboretum.rivers)
+    biomes.extend(arboretum.swamps)
+    biomes.extend(arboretum.coastlines)
+    biomes.extend(arboretum.grasslands)
+    biomes.extend(arboretum.mountains)
+    biomes.extend(arboretum.forests)
 
-    for index, coastline in enumerate(arboretum.coastlines):
-        print(f'{index + 3}. Coastline {str(coastline.id)[:8]} {len(coastline.animals)} animals')
-
-    for index, grassland in enumerate(arboretum.grasslands):
-        print(f'{index + 4}. Grassland {str(grassland.id)[:8]} {len(grassland.animals)} animals')
-
-    for index, mountain in enumerate(arboretum.mountains):
-        print(f'{index + 5}. Mountain {str(mountain.id)[:8]} {len(mountain.animals)} animals')
-        
-    for index, forest in enumerate(arboretum.forests):
-        print(f'{index + 6}. Forest {str(forest.id)[:8]} {len(forest.animals)} animals')
+    for index, biome in enumerate(biomes):
+        print(f'{index + 1}. {biome.name.capitalize()} {str(biome.id)[:8]} {len(biome.animals)} animals')
 
     print(f"Release {animal.species.lower()} into which biome?")
     choice = input(">")
-    
-    arboretum.rivers[int(choice) - 1].animals.append(animal)
+
+    biomes[int(choice) - 1].add_animal(animal)
 
 
