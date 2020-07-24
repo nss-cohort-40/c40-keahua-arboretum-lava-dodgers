@@ -6,6 +6,8 @@ class Ulae(Animal, Swimming, Saltwater):
 
     def __init__(self):
         Animal.__init__(self, "'Ulae")
+        Swimming.__init__(self)
+        Saltwater.__init__(self)
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
         self.minimum_age = 1
 

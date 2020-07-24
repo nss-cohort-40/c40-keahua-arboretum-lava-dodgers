@@ -8,13 +8,25 @@ class Grassland(Environment):
     def add_animal(self, animal):
         try:
             if animal.terrestrial:
-                self.animals.append(animal)
+                try:
+                    if len(self.animals) < 22:
+                        self.animals.append(animal)
+                except ValueError:
+                    print("****   That biome is not large enough   ****")
+                    print("****     Please choose another one      ****")
         except AttributeError:
-            raise AttributeError("Cannot add non-terrestrial animal to grasslands, obviously.")
+            print("****  Only terrestrial animals allowed  ****")
+            print("****    Please choose another biome     ****")
 
     def add_plant(self, plant):
         try:
-            if not plant.requires_current or not plant.saltwater:
-                self.plants.append(plant)
+            if plant.sunlight == "Full" or plant.req_rainfall == False:
+                try:
+                    if len(self.plants) < 15:
+                        self.plants.append(plant)
+                except ValueError:
+                    print("****   That biome is not large enough   ****")
+                    print("****     Please choose another one      ****")
         except AttributeError:
-            raise AttributeError("Cannot add plants that require water to grasslands, silly.")
+            print("****     Full sunlight plants only      ****")
+            print("****    Please choose another biome     ****")
