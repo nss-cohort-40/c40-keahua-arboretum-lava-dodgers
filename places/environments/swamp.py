@@ -7,18 +7,16 @@ class Swamp(Environment):
 
     def add_animal(self, animal):
         try:
-            if animal.cell_type is "hypertonic" and animal.aquatic:
+            if animal.cell_type == "hypertonic" and animal.aquatic:
                 try:
                     if len(self.animals) < 8:
                         self.animals.append(animal)
                 except ValueError:
                     print("****   That biome is not large enough   ****")
                     print("****     Please choose another one      ****")
-                    raise
         except AttributeError:
             print("****  Only stagnant freshwater animals allowed  ****")
             print("****        Please choose another biome         ****")
-            raise
 
     def add_plant(self, plant):
         try:
@@ -29,8 +27,6 @@ class Swamp(Environment):
                 except ValueError:
                     print("****   That biome is not large enough   ****")
                     print("****     Please choose another one      ****")
-                    raise
         except AttributeError:
             print("****   Only moving freshwater plants allowed   ****")
             print("****        Please choose another biome        ****")
-            raise

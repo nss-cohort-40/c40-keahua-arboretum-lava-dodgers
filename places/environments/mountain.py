@@ -14,11 +14,9 @@ class Mountain(Environment):
                 except ValueError:
                     print("****   That biome is not large enough   ****")
                     print("****     Please choose another one      ****")
-                    raise
         except AttributeError:
             print("****  Only terrestrial animals allowed  ****")
             print("****    Please choose another biome     ****")
-            raise
 
     def add_plant(self, plant):
         try:
@@ -29,8 +27,6 @@ class Mountain(Environment):
                 except ValueError:
                     print("****   That biome is not large enough   ****")
                     print("****     Please choose another one      ****")
-                    raise
         except AttributeError:
             print("****     Aquatic plants disallowed      ****")
             print("****    Please choose another biome     ****")
-            raise

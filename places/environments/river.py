@@ -14,11 +14,9 @@ class River(Environment):
                 except ValueError:
                     print("****   That biome is not large enough   ****")
                     print("****     Please choose another one      ****")
-                    raise
         except AttributeError:
             print("****  Only freshwater aquatic animals allowed  ****")
             print("****        Please choose another biome        ****")
-            raise
 
     def add_plant(self, plant):
         try:
@@ -29,8 +27,6 @@ class River(Environment):
                 except ValueError:
                     print("****   That biome is not large enough   ****")
                     print("****     Please choose another one      ****")
-                    raise
         except AttributeError:
             print("****   Only moving freshwater plants allowed   ****")
             print("****        Please choose another biome        ****")
-            raise

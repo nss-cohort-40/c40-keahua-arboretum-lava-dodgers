@@ -14,23 +14,19 @@ class Grassland(Environment):
                 except ValueError:
                     print("****   That biome is not large enough   ****")
                     print("****     Please choose another one      ****")
-                    raise
         except AttributeError:
             print("****  Only terrestrial animals allowed  ****")
             print("****    Please choose another biome     ****")
-            raise
 
     def add_plant(self, plant):
         try:
-            if plant.sunlight is "Full" or plant.req_rainfall is False:
+            if plant.sunlight == "Full" or plant.req_rainfall == False:
                 try:
                     if len(self.plants) < 15:
                         self.plants.append(plant)
                 except ValueError:
                     print("****   That biome is not large enough   ****")
                     print("****     Please choose another one      ****")
-                    raise
         except AttributeError:
             print("****     Full sunlight plants only      ****")
             print("****    Please choose another biome     ****")
-            raise
