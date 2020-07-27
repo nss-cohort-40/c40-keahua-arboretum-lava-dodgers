@@ -1,4 +1,5 @@
 import os
+import copy
 def build_facility_report(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
     show_biomes(arboretum.rivers)
@@ -12,8 +13,10 @@ def build_facility_report(arboretum):
 
 
 def show_biomes(biome_array):
-    for biome in biome_array:
-        print(f"\n{biome.name} [{str(biome.id)[:8]}]")
+    for index, biome in enumerate(biome_array):
+        animal_string = get_biome_specifics_animals(biome_array, index)
+        plant_string = get_biome_specifics_plants(biome_array, index)
+        print(f"\n{biome.name} | [{str(biome.id)[:8]}]{animal_string}{plant_string}")
         for animal in biome.animals:
             print(f'    {animal.species} ({str(animal.id)[:8]})')
         for plant in biome.plants:
