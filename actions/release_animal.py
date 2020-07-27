@@ -112,7 +112,18 @@ def release_animal(biomes, animal, arboretum):
     if len(biomes) > 0:
             try:
                 for index, biome in enumerate(biomes):
-                    print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]} | {len(biome.animals)} animals')
+                    if biome.name == "Mountain" and len(biome.animals) < 6: 
+                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]} | {len(biome.animals)} animals')
+                    elif biome.name == "Grassland" and len(biome.animals) < 22: 
+                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]} | {len(biome.animals)} animals')
+                    elif biome.name == "River" and len(biome.animals) < 12: 
+                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]} | {len(biome.animals)} animals')
+                    elif biome.name == "Forest" and len(biome.animals) < 20: 
+                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]} | {len(biome.animals)} animals')
+                    elif biome.name == "Swamp" and len(biome.animals) < 8: 
+                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]} | {len(biome.animals)} animals')
+                    elif biome.name == "Coastline" and len(biome.animals) < 15: 
+                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]} | {len(biome.animals)} animals')
 
                 print(f"Release {animal.species.lower()} into which biome?")
 
