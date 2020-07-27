@@ -10,7 +10,7 @@ def choose_plant():
     print("")
     
     plant = int(input("Choose plant to cultivate >> "))
-
+    
     if plant == 1:
         return("Mountain Apple Tree")
 
@@ -53,9 +53,9 @@ def cultivate_plant(arboretum):
         if biome_choice + 1 > len(biomes_available):
             print("Please choose a biome number in the list.")
             input("Press enter to continue >>")
-            choose_plant()
+            return
 
-        biomes_available[biome_choice].add_plant(new_plant)       
+        biomes_available[biome_choice - 1].add_plant(new_plant)       
         os.system('cls' if os.name == 'nt' else 'clear')
         print(f"The {plant} has successfully been cultivated!")
         input("Press enter to continue >>")
@@ -80,7 +80,7 @@ def cultivate_plant(arboretum):
         if biome_choice + 1 > len(biomes_available):
             print("Please choose a biome number in the list.")
             input("Press enter to continue >>")
-            choose_plant()
+            return
 
         biomes_available[biome_choice].add_plant(new_plant)
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -107,7 +107,7 @@ def cultivate_plant(arboretum):
         if biome_choice + 1 > len(biomes_available):
             print("Please choose a biome number in the list.")
             input("Press enter to continue >>")
-            choose_plant()
+            return
 
         biomes_available[biome_choice].add_plant(new_plant)
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -140,7 +140,7 @@ def cultivate_plant(arboretum):
         if biome_choice + 1 > len(biomes_available):
             print("Please choose a biome number in the list.")
             input("Press enter to continue >>")
-            choose_plant()
+            return
             
         biomes_available[biome_choice].add_plant(new_plant)
         os.system('cls' if os.name == 'nt' else 'clear')
