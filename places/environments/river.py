@@ -17,6 +17,8 @@ class River(Environment):
         except AttributeError:
             print("****  Only freshwater aquatic animals allowed  ****")
             print("****        Please choose another biome        ****")
+            input("Press any key to continue >>")
+            raise
 
     def add_plant(self, plant):
         try:

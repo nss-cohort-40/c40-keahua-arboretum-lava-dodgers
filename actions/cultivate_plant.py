@@ -8,9 +8,14 @@ def choose_plant():
     print("3. Rainbow Eucalyptus Tree")
     print("4. Blue Jade Vine")
     print("")
+    try:
+        plant = int(input("Choose plant to cultivate >> "))
     
-    plant = int(input("Choose plant to cultivate >> "))
-
+    except ValueError:
+        print("The input must be a number from the list.")
+        input("Press enter to continue >>")
+        return
+    
     if plant == 1:
         return("Mountain Apple Tree")
 
@@ -49,17 +54,29 @@ def cultivate_plant(arboretum):
             for x in range(len(biomes_available)):
                 print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} | ({len(biomes_available[x].plants)}/4)")
         
-        biome_choice = int(input("Choose a biome > ")) - 1
+        
+        try:
+            biome_choice = int(input("Choose a biome > ")) - 1
 
-        if biome_choice + 1 > len(biomes_available):
-            print("Please choose a biome number in the list.")
+        except ValueError:
+            print("The input must be a number.")
             input("Press enter to continue >>")
-            choose_plant()
+            return
+        
 
-        biomes_available[biome_choice].add_plant(new_plant)       
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"The {plant} has successfully been cultivated!")
-        input("Press enter to continue >>")
+        try:
+            if biome_choice >= 0:
+                biomes_available[biome_choice].add_plant(new_plant)       
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"The {plant} has successfully been cultivated!")
+                input("Press enter to continue >>")
+            else:
+                raise IndexError
+
+        except IndexError:
+            print("The number must be in the list.")
+            input("Press enter to continue >>")
+            return
 
     #Cultivate Silversword
     if plant == "Silversword":
@@ -76,18 +93,29 @@ def cultivate_plant(arboretum):
         else:
             for x in range(len(biomes_available)):
                 print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} | ({len(biomes_available[x].plants)}/15)")
-        
-        biome_choice = int(input("Choose a biome > ")) - 1
 
-        if biome_choice + 1 > len(biomes_available):
-            print("Please choose a biome number in the list.")
+        try:
+            biome_choice = int(input("Choose a biome > "))- 1
+
+        except ValueError:
+            print("The input must be a number.")
             input("Press enter to continue >>")
-            choose_plant()
+            return
 
-        biomes_available[biome_choice].add_plant(new_plant)
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"The {plant} has successfully been cultivated!")
-        input("Press enter to continue >>")
+        try:
+            if biome_choice >= 0:
+                biomes_available[biome_choice].add_plant(new_plant)
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"The {plant} has successfully been cultivated!")
+                input("Press enter to continue >>")
+            else:
+                raise IndexError
+
+        except IndexError:
+            print("The number must be in the list.")
+            input("Press enter to continue >>")
+            return
+
 
     #Cultivate Rainbow Eucalyptus Tree
     if plant == "Rainbow Eucalyptus Tree":
@@ -104,18 +132,26 @@ def cultivate_plant(arboretum):
         else:
             for x in range(len(biomes_available)):
                 print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} ({len(biomes_available[x].plants)}/32)")
-        
-        biome_choice = int(input("Choose a biome > ")) - 1
+        try:
+            biome_choice = int(input("Choose a biome > "))- 1
 
-        if biome_choice + 1 > len(biomes_available):
-            print("Please choose a biome number in the list.")
+        except ValueError:
+            print("The input must be a number.")
             input("Press enter to continue >>")
-            choose_plant()
-
-        biomes_available[biome_choice].add_plant(new_plant)
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"The {plant} has successfully been cultivated!")
-        input("Press enter to continue >>")
+            return
+        
+        try:
+            if biome_choice >= 0:
+                biomes_available[biome_choice ].add_plant(new_plant)
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"The {plant} has successfully been cultivated!")
+                input("Press enter to continue >>")
+            else:
+                raise IndexError
+        except IndexError:
+            print("The number must be in the list.")
+            input("Press enter to continue >>")
+            return
         
     #Cultivate Blue Jade Vine
     if plant == "Blue Jade Vine":
@@ -140,16 +176,24 @@ def cultivate_plant(arboretum):
                     print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} ({len(biomes_available[x].plants)}/12)")
                 else:
                     print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} ({len(biomes_available[x].plants)}/15)")
-        biome_choice = int(input("Choose a biome > ")) - 1
 
-        if biome_choice + 1 > len(biomes_available):
-            print("Please choose a biome number in the list.")
+        try:
+            biome_choice = int(input("Choose a biome > ")) - 1
+        except ValueError:
+            print("The input must be a number.")
             input("Press enter to continue >>")
-            choose_plant()
+            return
+        try:
+            if biome_choice >= 0:
+                biomes_available[biome_choice].add_plant(new_plant)
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"The {plant} has successfully been cultivated!")
+                input("Press enter to continue >>")
+            else:
+                raise IndexError
+        except IndexError:
+            print("The number must be in the list.")
+            input("Press enter to continue >>")
+            return
             
-        biomes_available[biome_choice].add_plant(new_plant)
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"The {plant} has successfully been cultivated!")
-        input("Press enter to continue >>")
-        
     
