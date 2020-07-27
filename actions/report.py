@@ -39,3 +39,44 @@ def build_facility_report(arboretum):
             print(f'    {plant.species} ({str(plant.id)[:8]})')
 
     input("\n\nPress any key to continue...")
+
+
+
+def get_biome_specifics_animals(biomes_available, x):
+plants_in_biome = []
+for plant in biomes_available[x].animals:
+    test_plants_in_biome = copy.deepcopy(plants_in_biome)
+    for item in plants_in_biome:
+        if item[0] == plant.species:
+            item.append(plant.species)
+    if test_plants_in_biome == plants_in_biome:
+        plants_in_biome.append([plant.species])
+plants_in_biome_string = ""
+for plant_list in plants_in_biome:
+    if plants_in_biome_string == "":
+        plants_in_biome_string = f" | ({len(plant_list)} {plant_list[0]}"
+    else:
+        plants_in_biome_string = plants_in_biome_string + f", {len(plant_list)} {plant_list[0]}"
+if plants_in_biome_string != "":
+    plants_in_biome_string = plants_in_biome_string + ")"
+return plants_in_biome_string
+
+
+def get_biome_specifics_plants(biomes_available, x):
+plants_in_biome = []
+for plant in biomes_available[x].plants:
+    test_plants_in_biome = copy.deepcopy(plants_in_biome)
+    for item in plants_in_biome:
+        if item[0] == plant.species:
+            item.append(plant.species)
+    if test_plants_in_biome == plants_in_biome:
+        plants_in_biome.append([plant.species])
+plants_in_biome_string = ""
+for plant_list in plants_in_biome:
+    if plants_in_biome_string == "":
+        plants_in_biome_string = f" | ({len(plant_list)} {plant_list[0]}"
+    else:
+        plants_in_biome_string = plants_in_biome_string + f", {len(plant_list)} {plant_list[0]}"
+if plants_in_biome_string != "":
+    plants_in_biome_string = plants_in_biome_string + ")"
+return plants_in_biome_string
