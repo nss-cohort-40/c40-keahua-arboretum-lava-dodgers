@@ -1,5 +1,6 @@
 import os
 from animals import *
+from places import *
 
 def choose_biome(animal, arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -19,15 +20,13 @@ def choose_biome(animal, arboretum):
     print(f"Release {animal.species.lower()} into which biome?")
     choice = input(">")
 
+
     try:
         biomes[int(choice) - 1].add_animal(animal)
     except AttributeError:
-        print("****       That number is not listed       ****")
-        print("****   Please choose an available option   ****")
-        input("Press any key to continue >>")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        raise
         choose_biome(animal, arboretum)
-    except ValueError:
-        input("Press any key to continue >>")
 
 def release_animal(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -47,33 +46,32 @@ def release_animal(arboretum):
 
     if choice == "1":
         animal = GoldDustDayGecko()
+        choose_biome(animal, arboretum)
 
     if choice == "2":
         animal = RiverDolphin()
+        choose_biome(animal, arboretum)
 
     if choice == "3":
         animal = NeneGoose()
+        choose_biome(animal, arboretum)
 
     if choice == "4":
         animal = Kikakapu()
+        choose_biome(animal, arboretum)
 
     if choice == "5":
         animal = Pueo()
+        choose_biome(animal, arboretum)
 
     if choice == "6":
         animal = Ulae()
+        choose_biome(animal, arboretum)
 
     if choice == "7":
         animal == Opeapea()
+        choose_biome(animal, arboretum)
 
     if choice == "8":
         animal = HappyFaceSpider()
-
-    try:
         choose_biome(animal, arboretum)
-    except AttributeError:
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print("****            No biome chosen            ****")
-        print("****   Please choose an available option   ****")
-        input("Press any key to continue >>")
-        release_animal(arboretum)
