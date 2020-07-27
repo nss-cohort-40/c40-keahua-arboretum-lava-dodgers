@@ -201,12 +201,7 @@ def cultivate_plant(arboretum):
             print("The number must be in the list.")
             input("Press enter to continue >>")
             return
-            
-        biomes_available[biome_choice].add_plant(new_plant)
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"The {plant} has successfully been cultivated!")
-        input("Press enter to continue >>")
-        
+
     
 def get_biome_specifics_plants(biomes_available, x):
     plants_in_biome = []
@@ -246,4 +241,3 @@ def get_biome_specifics_animals(biomes_available, x):
     if plants_in_biome_string != "":
         plants_in_biome_string = plants_in_biome_string + ")"
     return plants_in_biome_string
-    
