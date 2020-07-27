@@ -50,7 +50,7 @@ def cultivate_plant(arboretum):
         
         biome_choice = int(input("Choose a biome > ")) - 1
 
-        if biome_choice + 1 > len(biomes_available):
+        if biome_choice + 1 > len(biomes_available) or biome_choice <= 0:
             print("Please choose a biome number in the list.")
             input("Press enter to continue >>")
             return
@@ -77,7 +77,7 @@ def cultivate_plant(arboretum):
         
         biome_choice = int(input("Choose a biome > ")) - 1
 
-        if biome_choice + 1 > len(biomes_available):
+        if biome_choice + 1 > len(biomes_available) or biome_choice <= 0:
             print("Please choose a biome number in the list.")
             input("Press enter to continue >>")
             return
@@ -104,7 +104,7 @@ def cultivate_plant(arboretum):
         
         biome_choice = int(input("Choose a biome > ")) - 1
 
-        if biome_choice + 1 > len(biomes_available):
+        if biome_choice + 1 > len(biomes_available) or biome_choice <= 0:
             print("Please choose a biome number in the list.")
             input("Press enter to continue >>")
             return
@@ -137,7 +137,7 @@ def cultivate_plant(arboretum):
                     print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} ({len(biomes_available[x].plants)}/15)")
         biome_choice = int(input("Choose a biome > ")) - 1
 
-        if biome_choice + 1 > len(biomes_available):
+        if biome_choice + 1 > len(biomes_available) or biome_choice <= 0:
             print("Please choose a biome number in the list.")
             input("Press enter to continue >>")
             return
