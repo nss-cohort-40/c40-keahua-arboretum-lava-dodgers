@@ -31,7 +31,7 @@ def main_menu():
         annex_habitat(keahua)
 
     if choice == "2":
-        release_animal(keahua)
+        choose_animal(keahua)
 
     if choice == "3":
         feed_animal(keahua)

@@ -3,6 +3,8 @@ from .cultivate_plant import cultivate_plant
 from .cultivate_plant import choose_plant
 # from .exit import exit
 # from .feed_animal import feed_animal
+from .release_animal import choose_animal
+from .release_animal import choose_biome
 from .release_animal import release_animal
 from .feed_animal import feed_animal
 # from .release_animal import release_animal

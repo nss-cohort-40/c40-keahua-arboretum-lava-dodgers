@@ -5,7 +5,7 @@ from ..habitats import Freshwater
 class RiverDolphin(Animal, Swimming, Freshwater):
 
     def __init__(self):
-        Animal.__init__(self, "River dolphin")
+        Animal.__init__(self, "River Dolphin")
         Swimming.__init__(self)
         Freshwater.__init__(self)
         self.__prey = { "Trout", "Mackerel", "Salmon", "Sardine" }
