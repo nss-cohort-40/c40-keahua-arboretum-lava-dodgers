@@ -39,7 +39,8 @@ def cultivate_plant(arboretum):
         biomes_available = []
 
         for biome in arboretum.mountains:
-            biomes_available.append(biome)
+            if len(biome.plants) < 4:
+                biomes_available.append(biome)
         if biomes_available == []:
             print("There are no biomes available for this plant. Please annex the proper biome before attempting to cultivate!")
             input("Press enter to continue >> ")
@@ -66,7 +67,8 @@ def cultivate_plant(arboretum):
         biomes_available = []
 
         for biome in arboretum.grasslands:
-            biomes_available.append(biome)
+            if len(biome.plants) < 15:
+                biomes_available.append(biome)
         if biomes_available == []:
             print("There are no biomes available for this plant. Please annex the proper biome before attempting to cultivate!")
             input("Press enter to continue >> ")
@@ -93,7 +95,8 @@ def cultivate_plant(arboretum):
         biomes_available = []
 
         for biome in arboretum.forests:
-            biomes_available.append(biome)
+            if len(biome.plants) < 32:
+                biomes_available.append(biome)
         if biomes_available == []:
             print("There are no biomes available for this plant. Please annex the proper biome before attempting to cultivate!")
             input("Press enter to continue >> ")
@@ -120,9 +123,11 @@ def cultivate_plant(arboretum):
         biomes_available = []
 
         for biome in arboretum.grasslands:
-            biomes_available.append(biome)
+            if len(biome.plants) < 12:
+                biomes_available.append(biome)
         for biome in arboretum.swamps:
-            biomes_available.append(biome)
+            if len(biome.plants) < 15:
+                biomes_available.append(biome)
 
         if biomes_available == []:
             print("There are no biomes available for this plant. Please annex the proper biome before attempting to cultivate!")
