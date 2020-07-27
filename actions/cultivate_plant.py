@@ -1,4 +1,5 @@
 import os
+import copy
 from plants import *
 
 def choose_plant():
@@ -52,7 +53,9 @@ def cultivate_plant(arboretum):
             return
         else:
             for x in range(len(biomes_available)):
-                print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} | ({len(biomes_available[x].plants)}/4)")
+                animals_in_biome_string = get_biome_specifics_animals(biomes_available, x)
+                plants_in_biome_string = get_biome_specifics_plants(biomes_available, x)
+                print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]}{plants_in_biome_string}{animals_in_biome_string} | ({len(biomes_available[x].plants)}/4)")
         
         
         try:
@@ -92,7 +95,10 @@ def cultivate_plant(arboretum):
             return
         else:
             for x in range(len(biomes_available)):
-                print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} | ({len(biomes_available[x].plants)}/15)")
+                animals_in_biome_string = get_biome_specifics_animals(biomes_available, x)
+                plants_in_biome_string = get_biome_specifics_plants(biomes_available, x)
+                print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]}{plants_in_biome_string}{animals_in_biome_string} | ({len(biomes_available[x].plants)}/15)")
+        
 
         try:
             biome_choice = int(input("Choose a biome > "))- 1
@@ -131,7 +137,10 @@ def cultivate_plant(arboretum):
             return
         else:
             for x in range(len(biomes_available)):
-                print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} ({len(biomes_available[x].plants)}/32)")
+                animals_in_biome_string = get_biome_specifics_animals(biomes_available, x)
+                plants_in_biome_string = get_biome_specifics_plants(biomes_available, x)
+                print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]}{plants_in_biome_string}{animals_in_biome_string} | ({len(biomes_available[x].plants)}/32)")
+        
         try:
             biome_choice = int(input("Choose a biome > "))- 1
 
@@ -172,10 +181,12 @@ def cultivate_plant(arboretum):
 
         else:
             for x in range(len(biomes_available)):
+                plants_in_biome_string = get_biome_specifics_plants(biomes_available, x)
+                animals_in_biome_string = get_biome_specifics_animals(biomes_available, x)
                 if biomes_available[x].name == "Swamp":
-                    print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} ({len(biomes_available[x].plants)}/12)")
+                    print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]}{plants_in_biome_string}{animals_in_biome_string} | ({len(biomes_available[x].plants)}/12)")
                 else:
-                    print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]} ({len(biomes_available[x].plants)}/15)")
+                    print(f"{x+1}. {biomes_available[x]} | {str(biomes_available[x].id)[:8]}{plants_in_biome_string}{animals_in_biome_string} | ({len(biomes_available[x].plants)}/15)")
 
         try:
             biome_choice = int(input("Choose a biome > ")) - 1
@@ -195,5 +206,43 @@ def cultivate_plant(arboretum):
             print("The number must be in the list.")
             input("Press enter to continue >>")
             return
-            
+
     
+def get_biome_specifics_plants(biomes_available, x):
+    plants_in_biome = []
+    for plant in biomes_available[x].plants:
+        test_plants_in_biome = copy.deepcopy(plants_in_biome)
+        for item in plants_in_biome:
+            if item[0] == plant.species:
+                item.append(plant.species)
+        if test_plants_in_biome == plants_in_biome:
+            plants_in_biome.append([plant.species])
+    plants_in_biome_string = ""
+    for plant_list in plants_in_biome:
+        if plants_in_biome_string == "":
+            plants_in_biome_string = f" | ({len(plant_list)} {plant_list[0]}"
+        else:
+            plants_in_biome_string = plants_in_biome_string + f", {len(plant_list)} {plant_list[0]}"
+    if plants_in_biome_string != "":
+        plants_in_biome_string = plants_in_biome_string + ")"
+    return plants_in_biome_string
+
+
+def get_biome_specifics_animals(biomes_available, x):
+    plants_in_biome = []
+    for plant in biomes_available[x].animals:
+        test_plants_in_biome = copy.deepcopy(plants_in_biome)
+        for item in plants_in_biome:
+            if item[0] == plant.species:
+                item.append(plant.species)
+        if test_plants_in_biome == plants_in_biome:
+            plants_in_biome.append([plant.species])
+    plants_in_biome_string = ""
+    for plant_list in plants_in_biome:
+        if plants_in_biome_string == "":
+            plants_in_biome_string = f" | ({len(plant_list)} {plant_list[0]}"
+        else:
+            plants_in_biome_string = plants_in_biome_string + f", {len(plant_list)} {plant_list[0]}"
+    if plants_in_biome_string != "":
+        plants_in_biome_string = plants_in_biome_string + ")"
+    return plants_in_biome_string
