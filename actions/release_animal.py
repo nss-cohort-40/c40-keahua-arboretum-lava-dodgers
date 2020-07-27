@@ -42,7 +42,7 @@ def choose_animal(arboretum):
         choose_biome(animal, arboretum)
 
     elif choice == "7":
-        animal == Opeapea()
+        animal = Opeapea()
         choose_biome(animal, arboretum)
 
     elif choice == "8":
@@ -64,7 +64,6 @@ def choose_biome(animal, arboretum):
     elif animal.species == "River Dolphin":
 
         biomes.extend(arboretum.rivers)
-        biomes.extend(arboretum.coastlines)
 
         release_animal(biomes, animal, arboretum)
 
@@ -88,7 +87,7 @@ def choose_biome(animal, arboretum):
 
         release_animal(biomes, animal, arboretum)
 
-    elif animal.species == "Ulae":
+    elif animal.species == "'Ulae":
 
         biomes.extend(arboretum.coastlines)
 
@@ -124,6 +123,13 @@ def release_animal(biomes, animal, arboretum):
                 input("Press any key to continue >>")
 
             except IndexError:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print("****          Choice unavailable           ****")
+                print("****    Please choose available option     ****")
+                input("Press any key to continue >>")
+                choose_biome(animal, arboretum)
+
+            except ValueError:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print("****          Choice unavailable           ****")
                 print("****    Please choose available option     ****")
