@@ -101,6 +101,7 @@ def choose_biome(animal, arboretum):
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Happy-Face Spider":
+
         biomes.extend(arboretum.swamps)
 
         release_animal(biomes, animal, arboretum)
@@ -117,10 +118,13 @@ def release_animal(biomes, animal, arboretum):
 
                 choice = input(">")
 
-                biomes[int(choice) - 1].add_animal(animal)
-                os.system('cls' if os.name == 'nt' else 'clear')
-                print("Animal successfully released!")
-                input("Press any key to continue >>")
+                if int(choice) > 0:
+                    biomes[int(choice) - 1].add_animal(animal)
+                    os.system('cls' if os.name == 'nt' else 'clear')
+                    print("Animal successfully released!")
+                    input("Press any key to continue >>")
+                else:
+                    raise ValueError
 
             except IndexError:
                 os.system('cls' if os.name == 'nt' else 'clear')
