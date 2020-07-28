@@ -7,7 +7,7 @@ class Swamp(Environment):
 
     def add_animal(self, animal):
         try:
-            if animal.species == "Happy-Face Spider" or animal.cell_type == "hypotonic":
+            if animal.species == "Happy-Face Spider" or animal.cell_type == "hypertonic":
                 try:
                     if len(self.animals) < 8:
                         self.animals.append(animal)
