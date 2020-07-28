@@ -172,6 +172,15 @@ def release_animal(biomes, animal, arboretum):
                     elif biome.name == "Grassland":
                         print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} / 22')
 
+                    elif biome.name == "Mountain":
+                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} / 6')
+                    
+                    elif biome.name == "River":
+                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} / 12')
+                    
+                    elif biome.name == "Swamp":
+                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} / 8')
+
                 print(f"Release {animal.species.lower()} into which biome?")
 
                 choice = input(">")
