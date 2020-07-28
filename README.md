@@ -15,7 +15,7 @@ track of when you last fed the animals, allows you to add plants or animals to t
 
 # Brought to you by Lava Dodgers LLC
 * # Zach Nicholson
-* ## Elijah Lavoie
-* ## Kaleb Moran
-* ## John Bain
+* ### Elijah Lavoie
+* ### Kaleb Moran
+* ### John Bain
 * ###### Chris Cotton
