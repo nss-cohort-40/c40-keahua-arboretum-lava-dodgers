@@ -97,54 +97,61 @@ def choose_biome(animal, arboretum):
     biomes = []
 
     if animal.species == "Gold Dust Day Gecko":
-
-        biomes.extend(arboretum.forests)
+        for biome in arboretum.forests:
+            if len(biome.animals) < 20:
+                biomes.append(biome)
 
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "River Dolphin":
-
-        biomes.extend(arboretum.rivers)
-
+        for biome in arboretum.rivers:
+            if len(biome.animals) < 12:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Nene Goose":
-
-        biomes.extend(arboretum.grasslands)
-
+        for biome in arboretum.grasslands:
+            if len(biome.animals) < 22:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Kīkākapu":
-
-        biomes.extend(arboretum.swamps)
-        biomes.extend(arboretum.rivers)
-
+        for biome in arboretum.swamps:
+            if len(biome.animals) < 8:
+                biomes.append(biome)
+        for biome in arboretum.rivers:
+            if len(biome.animals) < 12:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Pueo":
-
-        biomes.extend(arboretum.grasslands)
-        biomes.extend(arboretum.forests)
-
+        for biome in arboretum.grasslands:
+            if len(biome.animals) < 22:
+                biomes.append(biome)
+        for biome in arboretum.forests:
+            if len(biome.animals) < 20:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "'Ulae":
-
-        biomes.extend(arboretum.coastlines)
-
+        for biome in arboretum.coastlines:
+            if len(biome.animals) < 15:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Ope'ape'a":
-
-        biomes.extend(arboretum.forests)
-        biomes.extend(arboretum.mountains)
-
+        for biome in arboretum.forests:
+            if len(biome.animals) < 22:
+                biomes.append(biome)
+        for biome in arboretum.mountains:
+            if len(biome.animals) < 6:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Happy-Face Spider":
-
-        biomes.extend(arboretum.swamps)
-
+        for biome in arboretum.swamps:
+            if len(biome.animals) < 8:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
 def release_animal(biomes, animal, arboretum):
