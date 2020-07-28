@@ -98,7 +98,7 @@ def choose_biome(animal, arboretum):
 
     if animal.species == "Gold Dust Day Gecko":
         for biome in arboretum.forests:
-            if len(biome) < 20:
+            if len(biome.animals) < 20:
                 biomes.append(biome)
 
         release_animal(biomes, animal, arboretum)
