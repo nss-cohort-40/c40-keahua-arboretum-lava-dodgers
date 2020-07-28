@@ -4,9 +4,7 @@ import os
 from misc import *
 from animals import *
 from places import *
-from actions import annex_habitat, release_animal
-from actions import annex_habitat
-from actions import feed_animal
+from actions import *
 from plants import *
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
@@ -33,13 +31,13 @@ def main_menu():
         annex_habitat(keahua)
 
     if choice == "2":
-        release_animal(keahua)
+        choose_animal(keahua)
 
     if choice == "3":
         feed_animal(keahua)
 
     if choice == "4":
-        pass
+        cultivate_plant(keahua)
 
     if choice == "5":
         build_facility_report(keahua)

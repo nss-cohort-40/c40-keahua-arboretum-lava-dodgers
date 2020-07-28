@@ -15,25 +15,73 @@ def feed_animal(arboretum):
     choice = input("Choose animal > ")
 
     def list_food(animal):
-        print(animal)
+        os.system('cls' if os.name == 'nt' else 'clear')
         n = 1
         for food in animal.prey:
             print(f"{n}. {food}")
             n+=1
 
+    def feed_em(animal, prey):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        n = 1
+        for food in prey:
+            if int(choice2) == n:
+                animal.feed(food)
+                choice3 = input("Press enter to return to the main menu...")
+            n+=1
+
     if choice == "1":
-        list_food(GoldDustDayGecko)
+        animal = GoldDustDayGecko()
+        list_food(animal)
+        prey = animal.prey
+        choice2 = input(f"What's on the menu for the {animal.species} today? \n> ")
+        feed_em(animal, prey)
+        
     if choice == "2":
-        list_food(RiverDolphin)
+        animal = RiverDolphin()
+        list_food(animal)
+        prey = animal.prey
+        choice2 = input(f"What's on the menu for the {animal.species} today? \n> ")
+        feed_em(animal, prey)
+
     if choice == "3":
-        list_food(NeneGoose)
+        animal = NeneGoose()
+        list_food(animal)
+        prey = animal.prey
+        choice2 = input(f"What's on the menu for the {animal.species} today? \n> ")
+        feed_em(animal, prey)
+
     if choice == "4":
-        list_food(Kikakapu)
+        animal = Kikakapu()
+        list_food(animal)
+        prey = animal.prey
+        choice2 = input(f"What's on the menu for the {animal.species} today? \n> ")
+        feed_em(animal, prey)
+        
     if choice == "5":
-        list_food(Pueo)
+        animal = Pueo()
+        list_food(animal)
+        prey = animal.prey
+        choice2 = input(f"What's on the menu for the {animal.species} today? \n> ")
+        feed_em(animal, prey)
+
     if choice == "6":
-        list_food(Ulae)
+        animal = Ulae()
+        list_food(animal)
+        prey = animal.prey
+        choice2 = input(f"What's on the menu for the {animal.species} today? \n> ")
+        feed_em(animal, prey)
+
     if choice == "7":
-        list_food(Opeapea)
+        animal = Opeapea()
+        list_food(animal)
+        prey = animal.prey
+        choice2 = input(f"What's on the menu for the {animal.species} today? \n> ")
+        feed_em(animal, prey)
+
     if choice == "8":
-        list_food(HappyFaceSpider)
+        animal = HappyFaceSpider()
+        list_food(animal)
+        prey = animal.prey
+        choice2 = input(f"What's on the menu for the {animal.species} today? \n> ")
+        feed_em(animal, prey)
