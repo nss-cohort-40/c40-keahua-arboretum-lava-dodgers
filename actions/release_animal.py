@@ -97,54 +97,61 @@ def choose_biome(animal, arboretum):
     biomes = []
 
     if animal.species == "Gold Dust Day Gecko":
-
-        biomes.extend(arboretum.forests)
+        for biome in arboretum.forests:
+            if len(biome) < 20:
+                biomes.append(biome)
 
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "River Dolphin":
-
-        biomes.extend(arboretum.rivers)
-
+        for biome in arboretum.rivers:
+            if len(biome.animals) < 12:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Nene Goose":
-
-        biomes.extend(arboretum.grasslands)
-
+        for biome in arboretum.grasslands:
+            if len(biome.animals) < 22:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Kīkākapu":
-
-        biomes.extend(arboretum.swamps)
-        biomes.extend(arboretum.rivers)
-
+        for biome in arboretum.swamps:
+            if len(biome.animals) < 8:
+                biomes.append(biome)
+        for biome in arboretum.rivers:
+            if len(biome.animals) < 12:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Pueo":
-
-        biomes.extend(arboretum.grasslands)
-        biomes.extend(arboretum.forests)
-
+        for biome in arboretum.grasslands:
+            if len(biome.animals) < 22:
+                biomes.append(biome)
+        for biome in arboretum.forests:
+            if len(biome.animals) < 20:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "'Ulae":
-
-        biomes.extend(arboretum.coastlines)
-
+        for biome in arboretum.coastlines:
+            if len(biome.animals) < 15:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Ope'ape'a":
-
-        biomes.extend(arboretum.forests)
-        biomes.extend(arboretum.mountains)
-
+        for biome in arboretum.forests:
+            if len(biome.animals) < 22:
+                biomes.append(biome)
+        for biome in arboretum.mountains:
+            if len(biome.animals) < 6:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
     elif animal.species == "Happy-Face Spider":
-
-        biomes.extend(arboretum.swamps)
-
+        for biome in arboretum.swamps:
+            if len(biome.animals) < 8:
+                biomes.append(biome)
         release_animal(biomes, animal, arboretum)
 
 def release_animal(biomes, animal, arboretum):
@@ -155,18 +162,7 @@ def release_animal(biomes, animal, arboretum):
                 for index, biome in enumerate(biomes):
                     animal_string = get_biome_specifics_animals(biomes, index)
                     plant_string = get_biome_specifics_plants(biomes, index)
-                    if biome.name == "Mountain" and len(biome.animals) < 6: 
-                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} animals')
-                    elif biome.name == "Grassland" and len(biome.animals) < 22: 
-                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} animals')
-                    elif biome.name == "River" and len(biome.animals) < 12: 
-                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} animals')
-                    elif biome.name == "Forest" and len(biome.animals) < 20: 
-                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} animals')
-                    elif biome.name == "Swamp" and len(biome.animals) < 8: 
-                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} animals')
-                    elif biome.name == "Coastline" and len(biome.animals) < 15: 
-                        print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} animals')
+                    print(f'{index + 1}. {biome.name.capitalize()} | {str(biome.id)[:8]}{animal_string}{plant_string} | {len(biome.animals)} animals')
 
                 print(f"Release {animal.species.lower()} into which biome?")
 
